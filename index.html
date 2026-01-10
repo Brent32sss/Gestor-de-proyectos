@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- corregido: logo.png en lugar de logo.pgn -->
+            <img src="logo.png" alt="Hael logo" class="logo" loading="lazy">
+            <h1>📋 Gestor de Proyectos - Hael Service</h1>
+            <p>Accede rápidamente a tus obras y documentos</p>
+        </header>
+
+        <main>
+            <!-- Filtro de búsqueda -->
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="🔍 Buscar obra..."
+                    class="search-input"
+                >
+            </div>
+
+            <!-- Lista de obras -->
+            <div id="projectsList" class="projects-grid">
+                <!-- Los proyectos se generarán con JavaScript -->
+            </div>
+
+            <!-- Botón para agregar nuevo proyecto -->
+            <button class="btn-add" onclick="openAddProjectModal()">+ Agregar Obra</button>
+        </main>
+    </div>
+
+    <!-- Modal para agregar proyecto -->
+    <div id="addProjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddProjectModal()">&times;</span>
+            <h2>Agregar Nueva Obra</h2>
+            <form id="addProjectForm">
+                <input 
+                    type="text" 
+                    id="projectName" 
+                    placeholder="Nombre de la obra"
+                    required
+                >
+                <input 
+                    type="text" 
+                    id="projectCategory" 
+                    placeholder="Categoría (ej: Vías, Puentes, Edificios)"
+                    required
+                >
+                <input 
+                    type="url" 
+                    id="projectLink" 
+                    placeholder="Link (Drive, Sheet, etc)"
+                    required
+                >
+                <textarea 
+                    id="projectDescription" 
+                    placeholder="Descripción (opcional)"
+                    rows="4"
+                ></textarea>
+                <button type="submit" class="btn-save">Guardar Obra</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
