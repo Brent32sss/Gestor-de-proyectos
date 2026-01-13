@@ -30,7 +30,7 @@ function loadProjects() {
                     {
                         name: 'Registro Observaciones',
                         links: [
-                            { label: 'Formulario', url: 'https://forms.gle/G1p5AgEyfpYBZuZc9https://docs.google.com' },
+                            { label: 'Formulario', url: 'https://forms.gle/G1p5AgEyfpYBZuZc9' },
                             { label: 'Registro obs B200 F&A', url: 'https://docs.google.com' }
                         ]
                     }
