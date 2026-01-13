@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #2b2b2b; /* cambiado a gris sólido sin degradado */
+    background: #1C3D5A; /* azul del diseño */
     min-height: 100vh;
     padding: 20px;
 }
@@ -131,8 +131,8 @@ header p {
 .btn-link {
     flex: 1;
     padding: 12px;
-    /* fondo cambiado al degradado solicitado */
-    background: linear-gradient(135deg, hsl(180, 81%, 23%) 0%, #0f011d 100%);
+    /* fondo color sólido */
+    background: #76B82A;
     color: white;
     border: none;
     border-radius: 5px;
@@ -147,7 +147,7 @@ header p {
 .btn-link:hover {
     transform: scale(1.05);
     /* sombra adaptada al nuevo degradado */
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.18);
+    box-shadow: 0 4px 12px rgba(118, 184, 42, 0.3);
 }
 
 .btn-delete {
@@ -170,8 +170,8 @@ header p {
     display: block;
     margin: 0 auto;
     padding: 15px 40px;
-    /* fondo cambiado al degradado solicitado */
-    background: linear-gradient(135deg, hsl(180, 81%, 23%) 0%, #0f011d 100%);
+    /* fondo color sólido */
+    background: #76B82A;
     color: white;
     border: none;
     border-radius: 50px;
@@ -183,7 +183,7 @@ header p {
 
 .btn-add:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.18);
+    box-shadow: 0 6px 20px rgba(118, 184, 42, 0.3);
 }
 
 /* Modal */
@@ -205,8 +205,8 @@ header p {
 }
 
 .modal-content {
-    /* fondo cambiado a gris sólido para coincidir con el fondo de la página */
-    background: #2b2b2b;
+    /* fondo azul para coincidir con el fondo de la página */
+    background: #1C3D5A;
     margin: 5% auto;
     padding: 30px;
     border-radius: 10px;
@@ -267,13 +267,13 @@ header p {
 .modal-content input:focus,
 .modal-content textarea:focus {
     outline: none;
-    border-color: #90a7ff; /* variante más visible que #667eea sobre fondo oscuro */
+    border-color: #76B82A; /* verde del diseño */
 }
 
 .btn-save {
     padding: 12px;
-    /* fondo cambiado al degradado solicitado */
-    background: linear-gradient(135deg, hsl(180, 81%, 23%) 0%, #0f011d 100%);
+    /* fondo color sólido */
+    background: #76B82A;
     color: white;
     border: none;
     border-radius: 5px;
@@ -285,7 +285,7 @@ header p {
 
 .btn-save:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.18);
+    box-shadow: 0 6px 20px rgba(118, 184, 42, 0.3);
 }
 
 .empty-message {
@@ -293,6 +293,104 @@ header p {
     color: white;
     font-size: 1.2em;
     padding: 40px;
+}
+
+/* Estilos para opciones desplegables */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.option-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.option-toggle {
+    width: 100%;
+    padding: 15px;
+    background: #76B82A;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+.option-toggle:hover {
+    background: #65a01f;
+}
+
+.option-content {
+    padding: 15px;
+    background: rgba(28, 61, 90, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.option-content.collapsed {
+    display: none;
+}
+
+.option-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subcategories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.subcategory-btn {
+    padding: 12px;
+    background: rgba(118, 184, 42, 0.6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.subcategory-btn:hover {
+    background: rgba(118, 184, 42, 0.9);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.subcategory-content {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.option-link-btn {
+    padding: 12px;
+    background: rgba(118, 184, 42, 0.8);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: block;
+    font-size: 0.9em;
+}
+
+.option-link-btn:hover {
+    background: #65a01f;
+    transform: scale(1.05);
 }
 
 /* variable con la ruta del logo para uso en CSS */

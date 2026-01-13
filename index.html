@@ -35,37 +35,11 @@
         </main>
     </div>
 
-    <!-- Modal para agregar proyecto -->
-    <div id="addProjectModal" class="modal">
+    <!-- Modal para opciones de proyecto -->
+    <div id="projectOptionsModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeAddProjectModal()">&times;</span>
-            <h2>Agregar Nueva Obra</h2>
-            <form id="addProjectForm">
-                <input 
-                    type="text" 
-                    id="projectName" 
-                    placeholder="Nombre de la obra"
-                    required
-                >
-                <input 
-                    type="text" 
-                    id="projectCategory" 
-                    placeholder="Categoría (ej: Vías, Puentes, Edificios)"
-                    required
-                >
-                <input 
-                    type="url" 
-                    id="projectLink" 
-                    placeholder="Link (Drive, Sheet, etc)"
-                    required
-                >
-                <textarea 
-                    id="projectDescription" 
-                    placeholder="Descripción (opcional)"
-                    rows="4"
-                ></textarea>
-                <button type="submit" class="btn-save">Guardar Obra</button>
-            </form>
+            <span class="close" onclick="closeProjectOptionsModal()">&times;</span>
+            <div id="optionsContainer"></div>
         </div>
     </div>
 
