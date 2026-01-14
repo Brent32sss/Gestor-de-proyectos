@@ -213,7 +213,7 @@ function deleteProject(id) {
     }
 }
 
-// Abrir opciones de proyecto
+// Función principal para abrir opciones de CUALQUIER proyecto
 function openProjectOptions(projectId) {
     const project = projects.find(p => p.id === projectId);
     if (!project || !project.hasOptions) return;
@@ -221,43 +221,86 @@ function openProjectOptions(projectId) {
     const modal = document.getElementById('projectOptionsModal');
     const optionsContainer = document.getElementById('optionsContainer');
     
-    optionsContainer.innerHTML = `
-        <h2>${project.name}</h2>
-        <div class="options-list">
-    `;
+    optionsContainer.innerHTML = `<h2>${project.name}</h2><div class="options-list"></div>`;
+    const list = optionsContainer.querySelector('.options-list');
     
     project.options.forEach((option, index) => {
-        optionsContainer.innerHTML += `<div class="option-item"><button class="option-toggle" onclick="toggleOption(${projectId}, ${index})">▶ ${option.name}</button><div id="option-${projectId}-${index}" class="option-content collapsed">`;
-        
-        if (option.hasSubcategories) {
-            // Mostrar subcategorías dentro del option-content
-            optionsContainer.innerHTML += `<div class="subcategories-list">`;
+        const optionItem = document.createElement('div');
+        optionItem.className = 'option-item';
+
+        // NIVEL 2: Categorías principales (CIMA, RM, Registro Diario en B200, etc.)
+        let innerHTML = `
+            <button class="option-toggle" onclick="toggleOption(${projectId}, ${index})">
+                ▶ ${option.name}
+            </button>
+            <div id="option-${projectId}-${index}" class="option-content collapsed">
+        `;
+
+        // Si tiene subcategorías (NIVEL 3), creamos más desplegables
+        if (option.hasSubcategories && option.subcategories) {
             option.subcategories.forEach((subcategory, subIndex) => {
-                optionsContainer.innerHTML += `<button class="subcategory-btn" onclick="selectSubcategory(${projectId}, ${index}, ${subIndex})">${subcategory.name}</button>`;
+                const subId = `sub-${projectId}-${index}-${subIndex}`;
+                innerHTML += `
+                    <div class="subcategory-wrapper">
+                        <button class="subcategory-btn" onclick="toggleSubcategory('${subId}')">
+                            ▶ ${subcategory.name}
+                        </button>
+                        <div id="${subId}" class="subcategory-content collapsed">
+                            <div class="option-links">
+                                ${generateLinksHTML(subcategory.links)}
+                            </div>
+                        </div>
+                    </div>`;
             });
-            optionsContainer.innerHTML += `</div>`;
-            
-            // Crear divs para cada subcategoría dentro del option-content
-            option.subcategories.forEach((subcategory, subIndex) => {
-                optionsContainer.innerHTML += `<div id="subcategory-content-${projectId}-${index}-${subIndex}" class="subcategory-content" style="display: none;"><div class="option-links"></div></div>`;
-            });
-        } else {
-            // Mostrar links directamente para opciones sin subcategorías
-            optionsContainer.innerHTML += `<div class="option-links">`;
-            option.links.forEach(link => {
-                optionsContainer.innerHTML += `<a href="${link.url}" target="_blank" class="option-link-btn">${link.label}</a>`;
-            });
-            optionsContainer.innerHTML += `</div>`;
+        } else if (option.links) {
+            // Si NO tiene subcategorías, pero tiene links directos (como en B200 F&A)
+            innerHTML += `<div class="option-links">${generateLinksHTML(option.links)}</div>`;
         }
-        
-        optionsContainer.innerHTML += `</div></div>`;
+
+        innerHTML += `</div>`; 
+        optionItem.innerHTML = innerHTML;
+        list.appendChild(optionItem);
     });
     
-    optionsContainer.innerHTML += `
-        </div>
-    `;
-    
     modal.style.display = 'block';
+}
+
+// Función auxiliar para generar los botones de links
+function generateLinksHTML(links) {
+    if (!links) return '';
+    return links.map(link => `
+        <a href="${link.url}" target="_blank" class="option-link-btn">
+            ${link.label}
+        </a>
+    `).join('');
+}
+
+// Maneja el despliegue del Nivel 3 (Subcategorías)
+function toggleSubcategory(subId) {
+    const content = document.getElementById(subId);
+    const btn = event.currentTarget;
+    
+    if (content.classList.contains('collapsed')) {
+        content.classList.remove('collapsed');
+        btn.innerHTML = btn.innerHTML.replace('▶', '▼');
+    } else {
+        content.classList.add('collapsed');
+        btn.innerHTML = btn.innerHTML.replace('▼', '▶');
+    }
+}
+
+// Maneja el despliegue del Nivel 2 (Categorías principales)
+function toggleOption(projectId, index) {
+    const optionContent = document.getElementById(`option-${projectId}-${index}`);
+    const btn = event.currentTarget;
+    
+    if (optionContent.classList.contains('collapsed')) {
+        optionContent.classList.remove('collapsed');
+        btn.innerHTML = btn.innerHTML.replace('▶', '▼');
+    } else {
+        optionContent.classList.add('collapsed');
+        btn.innerHTML = btn.innerHTML.replace('▼', '▶');
+    }
 }
 
 // Seleccionar subcategoría
