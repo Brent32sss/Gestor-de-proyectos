@@ -423,7 +423,7 @@ header p {
 .option-link-btn {
     padding: 12px;
     background: rgba(255, 255, 255, 0.05);
-    color: white;
+    color: rgb(0, 0, 0);
     border: 1px solid rgba(118, 184, 42, 0.4);
     border-radius: 5px;
     cursor: pointer;
@@ -436,7 +436,7 @@ header p {
 }
 
 .option-link-btn:hover {
-    background: #65a01f;
+    background: #1C3D5A;
     transform: scale(1.05);
 }
 

@@ -17,7 +17,7 @@ function loadProjects() {
                 id: 1,
                 name: 'B200 F&A',
                 category: 'Edificaciones',
-                description: 'Proyecto de construcción del puente viaducto norte',
+                description: 'Proyecto de implementación de oficinas corporativas',
                 hasOptions: true,
                 options: [
                     {
@@ -28,7 +28,7 @@ function loadProjects() {
                         ]
                     },
                     {
-                        name: 'Registro Observaciones',
+                        name: 'Registro de Observaciones',
                         links: [
                             { label: 'Formulario', url: 'https://forms.gle/G1p5AgEyfpYBZuZc9' },
                             { label: 'Registro obs B200 F&A', url: 'https://docs.google.com' }
@@ -40,7 +40,7 @@ function loadProjects() {
                 id: 2,
                 name: 'PDR SJL',
                 category: 'Edificaciones',
-                description: 'Proyecto arquitectónico y de ingeniería del nuevo edificio',
+                description: 'Supervisión integral de infraestructura para servicios funerarios',
                 hasOptions: true,
                 options: [
                     {
@@ -88,16 +88,16 @@ function loadProjects() {
             {
                 id: 3,
                 name: 'Obra 3',
-                category: 'Vías',
-                link: 'https://docs.google.com/spreadsheets/d/1b7ceR17gvAYjzHGBIrugqhyfe9TPnU1-jlgA0qna6Vk/edit?gid=1998489909#gid=1998489909',
-                description: 'Ampliación y mejoramiento de la carretera panamericana'
+                category: 'General',
+                link: 'Por definir',
+                description: 'Por definir'
             },
             {
                 id: 4,
-                name: 'Sistema de Alcantarillado',
-                category: 'Infraestructura',
-                link: 'https://docs.google.com',
-                description: 'Renovación del sistema de alcantarillado municipal'
+                name: 'Obra 4',
+                category: 'General',
+                link: 'Por definir',
+                description: 'Por definir'
             }
         ];
         saveProjects();
@@ -131,9 +131,9 @@ function renderProjects(filter = '') {
         let actionHTML = '';
         
         if (project.hasOptions) {
-            actionHTML = `<button onclick="openProjectOptions(${project.id})" class="btn-link">📂 Abrir</button>`;
+            actionHTML = `<button onclick="openProjectOptions(${project.id})" class="btn-link">📥 Ingresar</button>`;
         } else {
-            actionHTML = `<a href="${project.link}" target="_blank" class="btn-link">📂 Abrir</a>`;
+            actionHTML = `<a href="${project.link}" target="_blank" class="btn-link">📥 Ingresar</a>`;
         }
         
         card.innerHTML = `
