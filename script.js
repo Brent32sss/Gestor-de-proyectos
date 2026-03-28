@@ -17,7 +17,7 @@ function loadProjects() {
                 id: 1,
                 name: 'B200 F&A',
                 category: 'Edificaciones',
-                description: 'Proyecto de implementación de oficinas corporativas',
+                description: 'Proyecto de construcción del puente viaducto norte',
                 hasOptions: true,
                 options: [
                     {
@@ -28,7 +28,7 @@ function loadProjects() {
                         ]
                     },
                     {
-                        name: 'Registro de Observaciones',
+                        name: 'Registro Observaciones',
                         links: [
                             { label: 'Formulario', url: 'https://forms.gle/G1p5AgEyfpYBZuZc9' },
                             { label: 'Registro obs B200 F&A', url: 'https://docs.google.com' }
@@ -40,7 +40,7 @@ function loadProjects() {
                 id: 2,
                 name: 'PDR SJL',
                 category: 'Edificaciones',
-                description: 'Supervisión integral de infraestructura para servicios funerarios',
+                description: 'Proyecto arquitectónico y de ingeniería del nuevo edificio',
                 hasOptions: true,
                 options: [
                     {
@@ -87,17 +87,62 @@ function loadProjects() {
             },
             {
                 id: 3,
-                name: 'Obra 3',
-                category: 'General',
-                link: 'Por definir',
-                description: 'Por definir'
+                name: 'Puente Pativilca',
+                category: 'Obras viales',
+                link: '',
+                description: 'Supervisión de la rehabilitación del puente intercambio vial pativilca',
+                hasOptions: true,
+                options: [
+                    {
+                        name: 'Reporte Diario',
+                        links: [
+                            { label: 'Formulario', url: 'https://forms.gle/aUuE2mBGoVD58qtf8' },
+                            { label: 'Reporte diario - Puente Pativilca', url: 'https://docs.google.com/spreadsheets/d/1TfKOLomdlaehOx4RBEQkDE5ov_wd98Ycgd_WpTzFDnY/edit?gid=1011148052#gid=1011148052' }
+                        ]
+                    },
+                    {
+                        name: 'Registro OBS', 
+                        links: [
+                            { label: 'Formulario', url: 'https://forms.gle/G1p5AgEyfpYBZuZc9' },
+                            { label: 'Registro OBS - Puente Pativilca', url: 'https://docs.google.com/spreadsheets/d/16lSAMSM-X-V6Ly5Ly31fl5cVoDdzCD7zkxIKnGiHrK0/edit?gid=0#gid=0' }
+                        ]
+                    },
+                    {
+                        name: 'Registro NC',
+                        links: [
+                            { label: 'Formulario', url: 'https://forms.gle/8BwMmTbQQujtosDa6' },
+                            { label: 'Registro NC - Puente Pativilca', url: 'https://docs.google.com/spreadsheets/d/16lSAMSM-X-V6Ly5Ly31fl5cVoDdzCD7zkxIKnGiHrK0/edit?gid=0#gid=0https://docs.google.com/spreadsheets/d/1Ay4kOSgRR8-2K6ToAaIMcvw19S1TdbDs2cR4fLNLBoQ/edit?gid=0#gid=0' }    
+                        ]
+                    },
+                    {
+                        name: 'LOGS',
+                        links: [
+                            { label: 'Logs - Pativilca', url: 'https://docs.google.com/spreadsheets/d/1rgh7ZJS-L6sAVNH2lv1g9E4F3xhBhDtMBmkRePOFvjo/edit?gid=1423770741#gid=1423770741' }, 
+                        ]
+                    },
+                    {
+                        name: 'Acta de reunión',
+                        links: [
+                            { label: 'Actas de reunión - Pativilca', url: 'https://docs.google.com/spreadsheets/d/1aiQvwKqvCmsBGH_e6kstQHwxTV4rIHk6LCmrYZC8Ij4/edit?gid=835423763#gid=835423763' }, 
+                        ]
+                    },
+                    {
+                        name: 'Project managment',
+                        links: [
+                            { label: 'Project managment - Pativilca', url: 'https://docs.google.com/spreadsheets/d/1SUoAu5YmIA4vN-VZ1aaNr1fZXZmcmoszn3C2liJWGoc/edit?gid=168572964#gid=168572964' },    
+                        ]
+                    },
+                    
+                ]
+                
+
             },
             {
                 id: 4,
-                name: 'Obra 4',
-                category: 'General',
-                link: 'Por definir',
-                description: 'Por definir'
+                name: 'Sistema de Alcantarillado',
+                category: 'Infraestructura',
+                link: 'https://docs.google.com',
+                description: 'Renovación del sistema de alcantarillado municipal'
             }
         ];
         saveProjects();
@@ -131,9 +176,9 @@ function renderProjects(filter = '') {
         let actionHTML = '';
         
         if (project.hasOptions) {
-            actionHTML = `<button onclick="openProjectOptions(${project.id})" class="btn-link">📥 Ingresar</button>`;
+            actionHTML = `<button onclick="openProjectOptions(${project.id})" class="btn-link">📂 Abrir</button>`;
         } else {
-            actionHTML = `<a href="${project.link}" target="_blank" class="btn-link">📥 Ingresar</a>`;
+            actionHTML = `<a href="${project.link}" target="_blank" class="btn-link">📂 Abrir</a>`;
         }
         
         card.innerHTML = `
