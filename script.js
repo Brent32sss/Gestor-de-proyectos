@@ -14,75 +14,51 @@ function loadProjects() {
         // Datos de ejemplo iniciales
         projects = [
             {
-                id: 1,
-                name: 'B200 F&A',
-                category: 'Edificaciones',
-                description: 'Proyecto de construcción del puente viaducto norte',
-                hasOptions: true,
-                options: [
-                    {
-                        name: 'Registro Diario',
-                        links: [
-                            { label: 'Formulario', url: 'https://forms.gle/aUuE2mBGoVD58qtf8' },
-                            { label: 'Registro Diario B200 F&A', url: ' https://docs.google.com/spreadsheets/d/1aggZPBWbjeta0iUmP1OsYZvKzYbIJXMzypJ1RtGDv_w/edit?gid=1011148052#gid=1011148052' }
-                        ]
-                    },
-                    {
-                        name: 'Registro Observaciones',
-                        links: [
-                            { label: 'Formulario', url: 'https://forms.gle/G1p5AgEyfpYBZuZc9' },
-                            { label: 'Registro obs B200 F&A', url: 'https://docs.google.com' }
-                        ]
-                    }
-                ]
-            },
-            {
                 id: 2,
                 name: 'PDR SJL',
                 category: 'Edificaciones',
                 description: 'Proyecto arquitectónico y de ingeniería del nuevo edificio',
                 hasOptions: true,
                 options: [
-                    {
-                        name: 'CIMA',
-                        hasSubcategories: true,
-                        subcategories: [
-                            {
-                                name: 'Registro Diario',
-                                links: [
-                                    { label: 'Formulario', url: 'https://forms.gle/aUuE2mBGoVD58qtf8' },
-                                    { label: 'Registro Diario PDR SJL', url: 'https://docs.google.com/spreadsheets/d/1vfHDfWHaEDXDPa1O0xoiFgdMoS2uxfrzw-pZjGZd04s/edit?gid=1011148052#gid=1011148052' }
-                                ]
-                            },
-                            {
-                                name: 'Registro Observaciones',
-                                links: [
-                                    { label: 'Formulario', url: 'https://forms.gle/G1p5AgEyfpYBZuZc9' },
-                                    { label: 'Registro obs PDR SJL - CIMA', url: 'https://docs.google.com/spreadsheets/d/1Uh55NdhOpsx0CZrKenyXqBO9vbJYiBMa0zC01kHTGd8/edit?gid=0#gid=0' }
-                                ]
-                            }
+                     {
+                        name: 'Reporte Diario',
+                        links: [
+                            { label: 'Formulario', url: 'https://forms.gle/i4iJBwFUbG695Bqu7' },
+                            { label: 'Reporte diario - PDR SJL', url: 'https://docs.google.com/spreadsheets/d/1vfHDfWHaEDXDPa1O0xoiFgdMoS2uxfrzw-pZjGZd04s/edit?gid=1011148052#gid=1011148052' }
                         ]
                     },
                     {
-                        name: 'RM',
-                        hasSubcategories: true,
-                        subcategories: [
-                            {
-                                name: 'Registro Diario',
-                                links: [
-                                    { label: 'Formulario', url: 'https://forms.gle/aUuE2mBGoVD58qtf8' },
-                                    { label: 'Registro Diario PDR SJL', url: 'https://docs.google.com/spreadsheets/d/1vfHDfWHaEDXDPa1O0xoiFgdMoS2uxfrzw-pZjGZd04s/edit?gid=1011148052#gid=1011148052' }
-                                ]
-                            },
-                            {
-                                name: 'Registro Observaciones',
-                                links: [
-                                    { label: 'Formulario', url: 'https://forms.gle/G1p5AgEyfpYBZuZc9' },
-                                    { label: 'Registro obs PDR SJL - RM', url: '#' }
-                                ]
-                            }
+                        name: 'Registro OBS', 
+                        links: [
+                            { label: 'Formulario', url: 'https://forms.gle/E1epyTHd4xN8B41B79' },
+                            { label: 'Registro OBS - PDR SJL', url: 'https://docs.google.com/spreadsheets/d/1Uh55NdhOpsx0CZrKenyXqBO9vbJYiBMa0zC01kHTGd8/edit?gid=0#gid=0' }
                         ]
-                    }
+                    },
+                    {
+                        name: 'Registro NC',
+                        links: [
+                            { label: 'Formulario', url: 'https://forms.gle/SNXjJer6ZyZ3q8DR9' },
+                            { label: 'Registro NC - PDR SJL', url: 'https://docs.google.com/spreadsheets/d/1JJJzjOu18rSSaARRSXbMmI11zvU2gNT1NfQ4KVaiFao/edit?gid=0#gid=0' }    
+                        ]
+                    },
+                    {
+                        name: 'LOGS',
+                        links: [
+                            { label: 'Logs - PDR SJL', url: 'https://docs.google.com/spreadsheets/d/1a4XmHZXV7ljRVQQ_924U8-jxaYHwBm29wWCsGt1zNBY/edit?gid=1423770741#gid=1423770741' }, 
+                        ]
+                    },
+                    {
+                        name: 'Acta de reunión',
+                        links: [
+                            { label: 'Actas de reunión - PDR SJL', url: '   ' }, 
+                        ]
+                    },
+                    {
+                        name: 'Project managment',
+                        links: [
+                            { label: 'Project managment - PDR SJL', url: 'https://docs.google.com/spreadsheets/d/1SUoAu5YmIA4vN-VZ1aaNr1fZXZmcmoszn3C2liJWGoc/edit?gid=168572964#gid=168572964' },    
+                        ]
+                    },
                 ]
             },
             {
@@ -123,27 +99,18 @@ function loadProjects() {
                     {
                         name: 'Acta de reunión',
                         links: [
-                            { label: 'Actas de reunión - Pativilca', url: 'https://docs.google.com/spreadsheets/d/1aiQvwKqvCmsBGH_e6kstQHwxTV4rIHk6LCmrYZC8Ij4/edit?gid=835423763#gid=835423763' }, 
+                            { label: 'Actas de reunión - Pativilca', url: 'https://docs.google.com/spreadsheets/d/1ADeFNRWN9JgbGls891BdUrMxOVHPrM8DiOPQ5uccpLo/edit?gid=1967927256#gid=1967927256' }, 
                         ]
                     },
                     {
                         name: 'Project managment',
                         links: [
-                            { label: 'Project managment - Pativilca', url: 'https://docs.google.com/spreadsheets/d/1SUoAu5YmIA4vN-VZ1aaNr1fZXZmcmoszn3C2liJWGoc/edit?gid=168572964#gid=168572964' },    
+                            { label: 'Project managment - Pativilca', url: 'https://docs.google.com/spreadsheets/d/1po4ubalXudIYB33FlxBwayKw1u0hEOETKaQ8Hqx0Cco/edit?gid=168572964#gid=168572964' },    
                         ]
                     },
                     
                 ]
-                
-
             },
-            {
-                id: 4,
-                name: 'Sistema de Alcantarillado',
-                category: 'Infraestructura',
-                link: 'https://docs.google.com',
-                description: 'Renovación del sistema de alcantarillado municipal'
-            }
         ];
         saveProjects();
     }
